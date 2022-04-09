@@ -27,6 +27,10 @@
                         <td>{{ $user->password }}</td>
                     </tr>
                     <tr>
+                        <th>Vacaciones</th>
+                        <td>{{ $user->vacation }}</td>
+                    </tr>
+                    <tr>
                         <th>Rol</th>
                         <td>
                           @foreach ($user->roles as $role)
@@ -34,10 +38,10 @@
                           @endforeach
                         </td>
                     </tr>
-                    @if ( $user->office_id != NULL )
+                    @if ( $user->agency_id != NULL )
                         <tr>
                             <th>Lugar de trabajo</th>
-                            <td>{{ $user->office->name }}</td>
+                            <td>{{ $user->agency->name }}</td>
                         </tr>
                     @endif
                 </tbody>

@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Fundacion Madi</title>
+        <title>Fundación Madi</title>
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200;600&display=swap" rel="stylesheet">
@@ -77,14 +77,11 @@
 
             <div class="content">
                 <div class="img-fluid">
-                    <img src="{{ asset('dist/img/madi1.png') }}" width="500">
-                </div>
-                {{-- <div class="title m-b-md">
-                    Madi
+                    <img src="{{ asset('dist/img/Madi.png') }}" width="500">
                 </div>
                 <div class="links">
-                    <a>Medio Ambiente y Desarrollo Integral</a>
-                </div> --}}
+                    <a>Sistema de Control de Asistencia</a>
+                </div>
             </div>
         </div>
     </body>

@@ -12,7 +12,7 @@
                 <tbody>
                     <tr>
                         <th>Nombre de Uduario</th>
-                        <td>{{ $output->user->name }}</td>
+                        <td>{{ $output->input->user->name }}</td>
                     </tr>
                     <tr>
                         <th>Direccion IP</th>

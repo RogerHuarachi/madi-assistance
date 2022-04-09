@@ -1,6 +1,6 @@
 <!-- Logo -->
 <a href="{{ route('home') }}" class="brand-link">
-    <img src="{{ asset('dist/img/madi1.png') }}" class="brand-image img-circle m-1">
+    <img src="{{ asset('dist/img/Madi.png') }}" class="brand-image img-circle m-1">
     <span class="brand-text font-weight-light">Madi</span>
 </a>
 
@@ -34,9 +34,9 @@
                 </li>
             @endcan
 
-            @can('departaments.index')
+            @can('cities.index')
                 <li class="nav-item">
-                    <a href="{{ route('departaments.index') }}" class="nav-link">
+                    <a href="{{ route('cities.index') }}" class="nav-link">
                         <i class="nav-icon fas fa-th"></i>
                         <p>
                             Departamentos
@@ -45,9 +45,9 @@
                 </li>
             @endcan
 
-            @can('offices.index')
+            @can('agencies.index')
                 <li class="nav-item">
-                    <a href="{{ route('offices.index') }}" class="nav-link">
+                    <a href="{{ route('agencies.index') }}" class="nav-link">
                         <i class="nav-icon fas fa-th"></i>
                         <p>
                             Oficinas
@@ -95,6 +95,17 @@
                         <i class="nav-icon fas fa-th"></i>
                         <p>
                             Salidas
+                        </p>
+                    </a>
+                </li>
+            @endcan
+
+            @can('absences.index')
+                <li class="nav-item">
+                    <a href="{{ route('absences.index') }}" class="nav-link">
+                        <i class="nav-icon fas fa-th"></i>
+                        <p>
+                            Faltas
                         </p>
                     </a>
                 </li>

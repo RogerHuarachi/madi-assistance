@@ -9,6 +9,11 @@
           <h1 class="m-0">Salidas</h1>
         </div>
         <div class="col-sm-6">
+            @can('inputs.store')
+                <ol class="breadcrumb float-sm-right">
+                    <button type="button" class="btn btn-success btn-xs" data-toggle="modal" data-target="#outputCreate"><i class="fas fa-plus"></i></button>
+                </ol>
+            @endcan
         </div>
       </div>
     </div>
@@ -38,7 +43,7 @@
                                 @foreach ($outputs as $output)
                                     <tr>
                                         <td>{{ $output->id }}</td>
-                                        <td>{{ $output->user->name }}</td>
+                                        <td>{{ $output->input->user->name }}</td>
                                         <td>{{ $output->ip }}</td>
                                         <td>{{ $output->date }}</td>
                                         <td>{{ $output->hour }}</td>
@@ -46,6 +51,10 @@
                                             <div class="btn-group">
                                                 <button type="button" class="btn btn-info btn-sm" data-toggle="modal" data-target="#outputShow{{ $output->id }}"><i class="fas fa-eye"></i></button>
                                                 @include('outputs.show')
+                                                @can('outputs.destroy')
+                                                    <button type="button" class="btn btn-warning btn-sm" data-toggle="modal" data-target="#outputEdit{{ $output->id }}"><i class="fas fa-pen"></i></button>
+                                                    @include('outputs.edit')
+                                                @endcan
                                                 @can('outputs.destroy')
                                                     <button type="button" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#outputDelete{{ $output->id }}"><i class="fas fa-trash-alt"></i></button>
                                                     @include('outputs.delete')
@@ -62,4 +71,5 @@
         </div>
     </div>
 </section>
+@include('outputs.create')
 @endsection

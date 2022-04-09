@@ -9,6 +9,19 @@
           <h1 class="m-0">Entradas</h1>
         </div>
         <div class="col-sm-6">
+            @can('inputs.store')
+                <ol class="breadcrumb float-sm-right">
+                    <button type="button" class="btn btn-success btn-xs" data-toggle="modal" data-target="#inputCreate"><i class="fas fa-plus"></i></button>
+                </ol>
+                {{-- <ol class="breadcrumb float-sm-right pr-2">
+                    <button type="button" class="btn btn-info btn-xs" data-toggle="modal" data-target="#inputImport"><i class="fas fa-upload"></i></button>
+                </ol> --}}
+            @endcan
+            @can('inputs.destroy')
+                <ol class="breadcrumb float-sm-right pr-2">
+                    <button type="button" class="btn btn-success btn-xs" data-toggle="modal" data-target="#inputDeleteAll"><i class="fas fa-minus"></i></button>
+                </ol>
+            @endcan
         </div>
       </div>
     </div>
@@ -47,6 +60,10 @@
                                             <button type="button" class="btn btn-info btn-sm" data-toggle="modal" data-target="#inputShow{{ $input->id }}"><i class="fas fa-eye"></i></button>
                                             @include('inputs.show')
                                             @can('inputs.destroy')
+                                                <button type="button" class="btn btn-warning btn-sm" data-toggle="modal" data-target="#inputEdit{{ $input->id }}"><i class="fas fa-pen"></i></button>
+                                                @include('inputs.edit')
+                                            @endcan
+                                            @can('inputs.destroy')
                                                 <button type="button" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#inputDelete{{ $input->id }}"><i class="fas fa-trash-alt"></i></button>
                                                 @include('inputs.delete')
                                             @endcan
@@ -62,4 +79,7 @@
         </div>
     </div>
 </section>
+@include('inputs.create')
+@include('inputs.deleteall')
+{{-- @include('inputs.import') --}}
 @endsection

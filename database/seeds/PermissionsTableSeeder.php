@@ -22,6 +22,16 @@ class PermissionsTableSeeder extends Seeder
         Permission::create(['name' => 'roles.store']);
         Permission::create(['name' => 'roles.update']);
         Permission::create(['name' => 'roles.destroy']);
+        //city list
+        Permission::create(['name' => 'cities.index']);
+        Permission::create(['name' => 'cities.store']);
+        Permission::create(['name' => 'cities.update']);
+        Permission::create(['name' => 'cities.destroy']);
+        //agency list
+        Permission::create(['name' => 'agencies.index']);
+        Permission::create(['name' => 'agencies.store']);
+        Permission::create(['name' => 'agencies.update']);
+        Permission::create(['name' => 'agencies.destroy']);
         //User list
         Permission::create(['name' => 'users.index']);
         Permission::create(['name' => 'users.store']);
@@ -37,16 +47,11 @@ class PermissionsTableSeeder extends Seeder
         Permission::create(['name' => 'outputs.store']);
         Permission::create(['name' => 'outputs.update']);
         Permission::create(['name' => 'outputs.destroy']);
-        //departament list
-        Permission::create(['name' => 'departaments.index']);
-        Permission::create(['name' => 'departaments.store']);
-        Permission::create(['name' => 'departaments.update']);
-        Permission::create(['name' => 'departaments.destroy']);
-        //offices list
-        Permission::create(['name' => 'offices.index']);
-        Permission::create(['name' => 'offices.store']);
-        Permission::create(['name' => 'offices.update']);
-        Permission::create(['name' => 'offices.destroy']);
+        //absence list
+        Permission::create(['name' => 'absences.index']);
+        Permission::create(['name' => 'absences.store']);
+        Permission::create(['name' => 'absences.update']);
+        Permission::create(['name' => 'absences.destroy']);
 
         //assistence list
         Permission::create(['name' => 'assistences.index']);

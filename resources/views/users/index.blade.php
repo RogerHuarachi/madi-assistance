@@ -33,7 +33,11 @@
                                 <tr>
                                     <th>id</th>
                                     <th>Nombre</th>
-                                    <th>Email</th>
+                                    <th>Vacaciones</th>
+                                    <th>Vacaciones</th>
+                                    <th>Subito</th>
+                                    <th>Baja medica</th>
+                                    <th>Maternidad</th>
                                     <th>Opciones</th>
                                 </tr>
                             </thead>
@@ -42,7 +46,11 @@
                                     <tr>
                                         <td>{{ $user->id }}</td>
                                         <td>{{ $user->name }}</td>
-                                        <td>{{ $user->email }}</td>
+                                        <td>{{ $user->vacation }}</td>
+                                        <td>{{ $user->vacaciones()->count() }}</td>
+                                        <td>{{ $user->subito()->count() }}</td>
+                                        <td>{{ $user->baja()->count() }}</td>
+                                        <td>{{ $user->maternidad()->count() }}</td>
                                         <td>
                                             <div class="btn-group">
                                                 <button type="button" class="btn btn-info btn-sm" data-toggle="modal" data-target="#userShow{{ $user->id }}"><i class="fas fa-eye"></i></button>

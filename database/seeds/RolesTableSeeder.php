@@ -12,8 +12,8 @@ class RolesTableSeeder extends Seeder
      */
     public function run()
     {
-        $admin = Role::create(['name' => 'ADMINISTRADOR']);
-        $admin->givePermissionTo([
+		$JNTIC = Role::create(['name' => 'ADM']);
+		$JNTIC->givePermissionTo([
         	'permissions.index',
         	'permissions.store',
         	'permissions.update',
@@ -39,35 +39,37 @@ class RolesTableSeeder extends Seeder
         	'outputs.update',
         	'outputs.destroy',
 
-        	'departaments.index',
-        	'departaments.store',
-        	'departaments.update',
-        	'departaments.destroy',
+        	'cities.index',
+        	'cities.store',
+        	'cities.update',
+        	'cities.destroy',
 
-        	'offices.index',
-        	'offices.store',
-        	'offices.update',
-        	'offices.destroy',
+        	'agencies.index',
+        	'agencies.store',
+        	'agencies.update',
+        	'agencies.destroy',
+
+        	'absences.index',
+        	'absences.store',
+        	'absences.update',
+        	'absences.destroy',
 
         	'assistences.index',
-		]);
-		$drafting = Role::create(['name' => 'Drafting']);
-		$drafting->givePermissionTo([
+        ]);
+		$Drafting = Role::create(['name' => 'Drafting']);
+		$Drafting->givePermissionTo([
         	'inputs.store',
         	'outputs.store',
-        	'assistences.index',
 		]);
-		$software = Role::create(['name' => 'Drafting']);
-		$software->givePermissionTo([
+		$Software = Role::create(['name' => 'Software']);
+		$Software->givePermissionTo([
         	'inputs.store',
         	'outputs.store',
-        	'assistences.index',
 		]);
-		$estructura = Role::create(['name' => 'Estructura']);
-		$estructura->givePermissionTo([
+		$Civil = Role::create(['name' => 'Civil']);
+		$Civil->givePermissionTo([
         	'inputs.store',
         	'outputs.store',
-        	'assistences.index',
 		]);
     }
 }

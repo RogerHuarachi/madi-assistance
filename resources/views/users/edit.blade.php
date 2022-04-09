@@ -20,6 +20,8 @@
                     <br>
                     <input class="form-control" type="password" placeholder="Contraseña" name="password">
                     <br>
+                    <input class="form-control" type="number" placeholder="Dias de Vacaciones" name="vacation" value="{{ $user->vacation }}">
+                    <br>
                     <div class="form-group">
                         <label>Rol de Usuario</label>
                         <select class="form-control" name="role" onchange="MostrarOfficinasEdit(this.value)">
@@ -30,9 +32,9 @@
                     </div>
                     <div class="form-group">
                         <label>Oficinas</label>
-                        <select class="form-control" name="office_id">
-                            @foreach ($offices as $office)
-                                <option value="{{ $office->id }}">{{ $office->name }}</option>
+                        <select class="form-control" name="agency_id">
+                            @foreach ($agencies as $agency)
+                                <option value="{{ $agency->id }}">{{ $agency->name }}</option>
                             @endforeach
                         </select>
                     </div>

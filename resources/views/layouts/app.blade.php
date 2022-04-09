@@ -4,7 +4,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <title>Madi</title>
+        <title>Fundación Madi</title>
 
         <!-- Google Font: Source Sans Pro -->
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
@@ -57,6 +57,12 @@
         <script src="{{ asset('plugins/jquery/jquery.min.js') }}"></script>
         <!-- Bootstrap 4 -->
         <script src="{{ asset('plugins/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+        <!-- ChartJS -->
+        <script src="{{ asset('plugins/chart.js/Chart.min.js') }}"></script>
+        <!-- AdminLTE App -->
+        <script src="{{ asset('dist/js/adminlte.min.js') }}"></script>
+        <!-- AdminLTE for demo purposes -->
+        <script src="{{ asset('dist/js/demo.js') }}"></script>
         <!-- DataTables  & Plugins -->
         <script src="{{ asset('plugins/datatables/jquery.dataTables.min.js') }}"></script>
         <script src="{{ asset('plugins/datatables-bs4/js/dataTables.bootstrap4.min.js') }}"></script>
@@ -72,10 +78,6 @@
         <script src="{{ asset('plugins/datatables-buttons/js/buttons.colVis.min.js') }}"></script>
         <!-- Ionicons -->
         <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
-        <!-- AdminLTE App -->
-        <script src="{{ asset('dist/js/adminlte.min.js') }}"></script>
-        <!-- AdminLTE for demo purposes -->
-        <script src="{{ asset('dist/js/demo.js') }}"></script>
 
         <!-- Page specific script -->
         <script>

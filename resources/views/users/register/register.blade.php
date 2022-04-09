@@ -31,9 +31,9 @@
                                 </div>
                                 <div class="form-group">
                                     <label>Oficinas</label>
-                                    <select class="form-control" name="office_id">
-                                        @foreach ($offices as $office)
-                                            <option value="{{ $office->id }}">{{ $office->name }}</option>
+                                    <select class="form-control" name="agency_id">
+                                        @foreach ($agencies as $agency)
+                                            <option value="{{ $agency->id }}">{{ $agency->name }}</option>
                                         @endforeach
                                     </select>
                                 </div>

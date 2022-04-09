@@ -29,7 +29,6 @@
                                     <th>Ip</th>
 
                                     <th>Usuario</th>
-                                    <th>Email</th>
                                     <th>Equipo</th>
 
                                     <th>Fecha Ent</th>
@@ -37,7 +36,8 @@
                                     <th>Estado Ent</th>
                                     <th>Ip Ent</th>
                                     <th>Equipo Ent</th>
-                                    
+                                    <th>Retardo</th>
+
                                     <th>Fecha Sal</th>
                                     <th>Hora Sal</th>
                                     <th>Estado Sal</th>
@@ -46,40 +46,63 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                @foreach ($todays as $today)
+                                @foreach ($inputs as $input)
                                     <tr>
-                                        <td>{{ $today->officeName }}</td>
-                                        <td>{{ $today->officeIntro }}</td>
-                                        <td>{{ $today->officeExit }}</td>
-                                        <td>{{ $today->officeIp }}</td>
+                                        <td>{{ $input->user->agency->name }}</td>
+                                        <td>{{ $input->user->agency->intro }}</td>
+                                        <td>{{ $input->user->agency->exit }}</td>
+                                        <td>{{ $input->user->agency->ip }}</td>
 
-                                        <td>{{ $today->userName }}</td>
-                                        <td>{{ $today->userEmail }}</td>
-                                        <td>{{ $today->userPhone }}</td>
+                                        <td>{{ $input->user->name }}</td>
+                                        <td>{{ $input->user->phone }}</td>
 
-                                        <td>{{ $today->inputDate }}</td>
-                                        <td>{{ $today->inputHour }}</td>
+                                        <td>{{ $input->date }}</td>
+                                        <td>{{ $input->hour }}</td>
                                         <td>
-                                            @if ($today->inputState == 0)
+                                            @if ($input->state == 0)
                                                 Temprano
                                             @else
                                                 Tarde
                                             @endif
                                         </td>
-                                        <td>{{ $today->inputIp }}</td>
-                                        <td>{{ $today->inputPhone }}</td>
+                                        <td>{{ $input->ip }}</td>
+                                        <td>{{ $input->phone }}</td>
 
-                                        <td>{{ $today->outputDate }}</td>
-                                        <td>{{ $today->outputHour }}</td>
                                         <td>
-                                            @if ($today->outputState == 0)
-                                                Temprano
-                                            @else
-                                                Tarde
+                                            @if ($input->delayed)
+                                                {{ $input->delayed }}
                                             @endif
                                         </td>
-                                        <td>{{ $today->outputIp }}</td>
-                                        <td>{{ $today->outputPhone }}</td>
+
+                                        <td>
+                                            @if ($input->output)
+                                                {{ $input->output->date }}
+                                            @endif
+                                        </td>
+                                        <td>
+                                            @if ($input->output)
+                                                {{ $input->output->hour }}
+                                            @endif
+                                        </td>
+                                        <td>
+                                            @if ($input->output)
+                                                @if ($input->output->state == 0)
+                                                    Temprano
+                                                @else
+                                                    Tarde
+                                                @endif
+                                            @endif
+                                        </td>
+                                        <td>
+                                            @if ($input->output)
+                                                {{ $input->output->ip }}
+                                            @endif
+                                        </td>
+                                        <td>
+                                            @if ($input->output)
+                                                {{ $input->output->phone }}
+                                            @endif
+                                        </td>
                                     </tr>
                                 @endforeach
                             </tbody>
